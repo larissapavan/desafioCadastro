@@ -19,54 +19,54 @@ Este projeto foi desenvolvido para atender ao desafio de criacao de um sistema d
 
 ## Funcionalidades implementadas
 
-- leitura obrigatoria do arquivo `formulario.txt`
-- exibicao do menu inicial no terminal
-- validacao de opcao do menu para aceitar apenas numeros validos
-- cadastro de novo pet a partir das perguntas do formulario
-- armazenamento do cadastro em objeto `Pet`
-- salvamento de cada pet em um arquivo `.TXT`
-- listagem de todos os pets cadastrados
-- busca de pets por criterios
-- alteracao de pet cadastrado
-- exclusao de pet com confirmacao
+- Leitura obrigatoria do arquivo `formulario.txt`.
+- Exibicao do menu inicial no terminal.
+- Validacao de opcao do menu para aceitar apenas numeros validos.
+- Cadastro de novo pet a partir das perguntas do formulario.
+- Armazenamento do cadastro em objeto `Pet`.
+- Salvamento de cada pet em um arquivo `.TXT`.
+- Listagem de todos os pets cadastrados.
+- Busca de pets por criterios.
+- Alteracao de pet cadastrado.
+- Exclusao de pet com confirmacao.
 
 ## Requisitos do desafio atendidos
 
 ### Passo 1 - Leitura do arquivo de perguntas
 
-- o projeto possui o arquivo [formulario.txt](/C:/Users/laris/Downloads/desafioCadastro/formulario.txt)
-- as perguntas sao lidas do arquivo e exibidas no terminal
-- as perguntas principais nao foram fixadas com `print` direto no codigo
+- O projeto possui o arquivo [formulario.txt](/C:/Users/laris/Downloads/desafioCadastro/formulario.txt).
+- As perguntas sao lidas do arquivo e exibidas no terminal.
+- As perguntas principais nao foram fixadas com `print` direto no codigo.
 
 ### Passo 2 - Menu inicial
 
-- o menu apresenta as 6 opcoes pedidas no desafio
-- o sistema nao aceita letras ou caracteres especiais na escolha do menu
-- o sistema nao aceita `0` nem numeros negativos
-- em caso de opcao invalida, o menu volta a ser exibido
+- O menu apresenta as 6 opcoes pedidas no desafio.
+- O sistema nao aceita letras ou caracteres especiais na escolha do menu.
+- O sistema nao aceita `0` nem numeros negativos.
+- Em caso de opcao invalida, o menu volta a ser exibido.
 
 ### Passo 3 - Cadastro de novos pets
 
-- o cadastro cria um objeto `Pet`
-- nome e sobrenome sao obrigatorios
-- nome completo aceita apenas letras e espacos
-- tipo e sexo utilizam `enum`
-- endereco e coletado separando numero, cidade e rua
-- idade e peso aceitam numero com ponto ou virgula
-- peso maior que `60` ou menor que `0.5` gera excecao
-- idade maior que `20` gera excecao
-- idade informada entre `1` e `11` e convertida para anos decimais
-- raca aceita apenas letras e espacos
-- os campos previstos pelo desafio como opcionais sao preenchidos com a constante `NAO INFORMADO`
+- O cadastro cria um objeto `Pet`.
+- Nome e sobrenome sao obrigatorios.
+- Nome completo aceita apenas letras e espacos.
+- Tipo e sexo utilizam `enum`.
+- Endereco e coletado separando numero, cidade e rua.
+- Idade e peso aceitam numero com ponto ou virgula.
+- Peso maior que `60` ou menor que `0.5` gera excecao.
+- Idade maior que `20` gera excecao.
+- Idade informada entre `1` e `11` e convertida para anos decimais.
+- Raca aceita apenas letras e espacos.
+- Os campos previstos pelo desafio como opcionais sao preenchidos com a constante `NAO INFORMADO`.
 
 ### Passo 4 - Armazenamento em arquivo
 
-- cada pet e salvo dentro da pasta [petsCadastrados](/C:/Users/laris/Downloads/desafioCadastro/petsCadastrados)
-- o nome do arquivo segue o padrao `yyyyMMddTHHmm-NOMECOMPLETO.TXT`
-- o nome do pet vai em maiusculas no nome do arquivo
-- o arquivo salvo contem apenas respostas
-- cada resposta fica em uma linha
-- o endereco e salvo em uma unica linha
+- Cada pet e salvo dentro da pasta [petsCadastrados](/C:/Users/laris/Downloads/desafioCadastro/petsCadastrados).
+- O nome do arquivo segue o padrao `yyyyMMddTHHmm-NOMECOMPLETO.TXT`.
+- O nome do pet vai em maiusculas no nome do arquivo.
+- O arquivo salvo contem apenas respostas.
+- Cada resposta fica em uma linha.
+- O endereco e salvo em uma unica linha.
 
 Exemplo de nome de arquivo gerado:
 
@@ -88,9 +88,9 @@ Viralata
 
 ### Passo 5 - Busca de pets cadastrados
 
-- o sistema exige primeiro o tipo do animal
-- depois permite buscar com `1` ou `2` criterios adicionais
-- os criterios disponiveis sao:
+- O sistema exige primeiro o tipo do animal.
+- Depois permite buscar com `1` ou `2` criterios adicionais.
+- Os criterios disponiveis sao:
 
 ```text
 Nome ou sobrenome
@@ -101,33 +101,33 @@ Raca
 Endereco
 ```
 
-- a busca por nome e raca aceita partes do texto
-- a busca ignora diferenca entre maiusculas e minusculas
-- a busca tambem ignora acentos
-- os resultados sao exibidos em formato de lista numerada
+- A busca por nome e raca aceita partes do texto.
+- A busca ignora diferenca entre maiusculas e minusculas.
+- A busca tambem ignora acentos.
+- Os resultados sao exibidos em formato de lista numerada.
 
 ### Passo 6 - Alteracao de pet
 
-- a alteracao comeca por uma busca
-- o usuario escolhe o pet em uma lista numerada
-- todos os dados podem ser alterados, exceto tipo e sexo
+- A alteracao comeca por uma busca.
+- O usuario escolhe o pet em uma lista numerada.
+- Todos os dados podem ser alterados, exceto tipo e sexo.
 
 ### Passo 7 - Exclusao de pet
 
-- a exclusao comeca por uma busca
-- o usuario escolhe um pet da lista
-- a exclusao pede confirmacao com `SIM` ou `NAO`
-- apenas um pet e excluido por vez
+- A exclusao comeca por uma busca.
+- O usuario escolhe um pet da lista.
+- A exclusao pede confirmacao com `SIM` ou `NAO`.
+- Apenas um pet e excluido por vez.
 
 ### Passo 8 - Sair
 
-- ao escolher a opcao `6`, o programa e encerrado
+- Ao escolher a opcao `6`, o programa e encerrado.
 
 ## O que nao foi implementado
 
-- passo extra de manutencao dinamica do `formulario.txt`
-- destaque em negrito do termo pesquisado nos resultados
-- busca por data de cadastro
+- Passo extra de manutencao dinamica do `formulario.txt`.
+- Destaque em negrito do termo pesquisado nos resultados.
+- Busca por data de cadastro.
 
 ## Estrutura do projeto
 
@@ -171,12 +171,12 @@ java -cp out cadastropets.Aplicacao
 
 ## Regras importantes aplicadas
 
-- nome completo deve conter nome e sobrenome
-- nome e raca nao aceitam numeros nem caracteres especiais
-- tipo e sexo sao controlados por `enum`
-- o menu aceita apenas numeros validos
-- campos em branco definidos pelo desafio recebem `NAO INFORMADO`
-- o projeto foi estruturado com separacao entre modelo, servico e utilitarios
+- Nome completo deve conter nome e sobrenome.
+- Nome e raca nao aceitam numeros nem caracteres especiais.
+- Tipo e sexo sao controlados por `enum`.
+- O menu aceita apenas numeros validos.
+- Campos em branco definidos pelo desafio recebem `NAO INFORMADO`.
+- O projeto foi estruturado com separacao entre modelo, servico e utilitarios.
 
 ## Observacoes finais
 
