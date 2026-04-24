@@ -30,7 +30,7 @@ public class Aplicacao {
                             System.out.println("Sistema encerrado.");
                             return;
                         }
-                        default -> System.out.println("Opcao invalida.");
+                        default -> System.out.println("Opção inválida.");
                     }
                 } catch (ExcecaoNegocio excecao) {
                     System.out.println("Erro: " + excecao.getMessage());
@@ -41,7 +41,7 @@ public class Aplicacao {
     }
 
     private static void exibirMenu() {
-        System.out.println("Menu inicial");
+        System.out.println("Menu inicial:");
         System.out.println("1. Cadastrar um novo pet");
         System.out.println("2. Alterar os dados do pet cadastrado");
         System.out.println("3. Deletar um pet cadastrado");
@@ -52,19 +52,19 @@ public class Aplicacao {
 
     private static int lerOpcaoMenu(Scanner scanner) {
         while (true) {
-            System.out.print("Escolha uma opcao: ");
+            System.out.print("Escolha uma opção: ");
             String valor = scanner.nextLine().trim();
             if (!valor.matches("^\\d+$")) {
-                System.out.println("Digite apenas numeros.");
+                System.out.println("Digite apenas números.");
                 continue;
             }
             int opcao = Integer.parseInt(valor);
             if (opcao <= 0) {
-                System.out.println("Nao use zero ou numeros negativos.");
+                System.out.println("Não use zero ou números negativos.");
                 continue;
             }
             if (opcao > 6) {
-                System.out.println("Opcao invalida. O menu sera exibido novamente.");
+                System.out.println("Opção inválida. O menu será exibido novamente.");
                 continue;
             }
             return opcao;

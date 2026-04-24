@@ -22,7 +22,7 @@ public enum SexoPet {
         return switch (normalizado) {
             case "macho" -> MACHO;
             case "femea", "femea " -> FEMEA;
-            default -> throw new ExcecaoNegocio("Sexo invalido. Digite Macho ou Femea.");
+            default -> throw new ExcecaoNegocio("Sexo inválido. Digite Macho ou Fêmea.");
         };
     }
 }

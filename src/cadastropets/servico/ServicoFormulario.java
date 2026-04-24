@@ -18,13 +18,13 @@ public class ServicoFormulario {
     public List<String> carregarPerguntas() {
         try {
             if (!Files.exists(caminhoFormulario)) {
-                throw new ExcecaoNegocio("Arquivo formulario.txt nao encontrado.");
+                throw new ExcecaoNegocio("Arquivo formulario.txt não encontrado.");
             }
             return Files.readAllLines(caminhoFormulario, StandardCharsets.UTF_8).stream()
                     .filter(line -> !line.isBlank())
                     .toList();
         } catch (IOException excecao) {
-            throw new ExcecaoNegocio("Nao foi possivel ler o arquivo formulario.txt.");
+            throw new ExcecaoNegocio("Não foi possível ler o arquivo formulario.txt.");
         }
     }
 

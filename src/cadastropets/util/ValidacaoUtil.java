@@ -11,10 +11,10 @@ public final class ValidacaoUtil {
     public static String validarNomeCompleto(String valor) {
         String textoLimpo = TextoUtil.limparEspacos(valor);
         if (textoLimpo.isBlank()) {
-            throw new ExcecaoNegocio("O nome completo do pet e obrigatorio.");
+            throw new ExcecaoNegocio("O nome completo do pet é obrigatório.");
         }
         if (!textoLimpo.matches(LETTERS_AND_SPACES)) {
-            throw new ExcecaoNegocio("O nome deve conter apenas letras e espacos.");
+            throw new ExcecaoNegocio("O nome deve conter apenas letras e espaços.");
         }
         String[] partes = textoLimpo.split(" ");
         if (partes.length < 2) {
@@ -29,7 +29,7 @@ public final class ValidacaoUtil {
             return TextoUtil.NAO_INFORMADO;
         }
         if (!textoLimpo.matches(LETTERS_AND_SPACES)) {
-            throw new ExcecaoNegocio("A raca deve conter apenas letras e espacos.");
+            throw new ExcecaoNegocio("A raça deve conter apenas letras e espaços.");
         }
         return textoLimpo;
     }
@@ -48,7 +48,7 @@ public final class ValidacaoUtil {
             return TextoUtil.NAO_INFORMADO;
         }
         if (!textoLimpo.matches("^\\d+[A-Za-z]?$")) {
-            throw new ExcecaoNegocio("O numero do endereco deve conter apenas numeros.");
+            throw new ExcecaoNegocio("O número do endereço deve conter apenas números.");
         }
         return textoLimpo;
     }
@@ -64,7 +64,7 @@ public final class ValidacaoUtil {
     public static double interpretarIdade(String valor) {
         double idade = interpretarDecimalComPadrao(valor, true);
         if (idade != -1 && idade > 20) {
-            throw new ExcecaoNegocio("A idade nao pode ser maior que 20 anos.");
+            throw new ExcecaoNegocio("A idade não pode ser maior que 20 anos.");
         }
         if (idade != -1 && idade >= 1 && idade < 12) {
             idade = idade / 12.0;
@@ -82,10 +82,10 @@ public final class ValidacaoUtil {
             if (aceitarVazio) {
                 return -1;
             }
-            throw new ExcecaoNegocio("Informe um numero valido.");
+            throw new ExcecaoNegocio("Informe um número válido.");
         }
         if (!textoLimpo.matches("^\\d+(\\.\\d+)?$")) {
-            throw new ExcecaoNegocio("Digite apenas numeros, usando ponto ou virgula.");
+            throw new ExcecaoNegocio("Digite apenas números, usando ponto ou vírgula.");
         }
         return Double.parseDouble(textoLimpo);
     }

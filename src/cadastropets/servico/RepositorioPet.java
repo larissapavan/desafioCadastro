@@ -33,7 +33,7 @@ public class RepositorioPet {
             Files.write(destino, pet.paraLinhasDoArquivo(), StandardCharsets.UTF_8);
             pet.definirArquivoOrigem(destino);
         } catch (IOException excecao) {
-            throw new ExcecaoNegocio("Nao foi possivel salvar o pet em arquivo.");
+            throw new ExcecaoNegocio("Não foi possível salvar o pet em arquivo.");
         }
     }
 
@@ -43,7 +43,7 @@ public class RepositorioPet {
                 Files.deleteIfExists(pet.arquivoOrigem());
             }
         } catch (IOException excecao) {
-            throw new ExcecaoNegocio("Nao foi possivel deletar o arquivo do pet.");
+            throw new ExcecaoNegocio("Não foi possível deletar o arquivo do pet.");
         }
     }
 
@@ -59,7 +59,7 @@ public class RepositorioPet {
             }
             return pets;
         } catch (IOException excecao) {
-            throw new ExcecaoNegocio("Nao foi possivel carregar os pets cadastrados.");
+            throw new ExcecaoNegocio("Não foi possível carregar os pets cadastrados.");
         }
     }
 
@@ -69,7 +69,7 @@ public class RepositorioPet {
                     .filter(line -> !line.isBlank())
                     .toList();
             if (linhas.size() < 7) {
-                throw new ExcecaoNegocio("Arquivo invalido encontrado em petsCadastrados: " + caminho.getFileName());
+                throw new ExcecaoNegocio("Arquivo inválido encontrado em petsCadastrados: " + caminho.getFileName());
             }
             String[] partesEndereco = linhas.get(3).split(",\\s*");
             String rua = partesEndereco.length > 0 ? partesEndereco[0] : TextoUtil.NAO_INFORMADO;
@@ -89,7 +89,7 @@ public class RepositorioPet {
             pet.definirArquivoOrigem(caminho);
             return pet;
         } catch (IOException excecao) {
-            throw new ExcecaoNegocio("Nao foi possivel ler o arquivo do pet: " + caminho.getFileName());
+            throw new ExcecaoNegocio("Não foi possível ler o arquivo do pet: " + caminho.getFileName());
         }
     }
 

@@ -22,7 +22,7 @@ public enum TipoPet {
         return switch (normalizado) {
             case "cachorro" -> CACHORRO;
             case "gato" -> GATO;
-            default -> throw new ExcecaoNegocio("Tipo invalido. Digite Cachorro ou Gato.");
+            default -> throw new ExcecaoNegocio("Tipo inválido. Digite Cachorro ou Gato.");
         };
     }
 }

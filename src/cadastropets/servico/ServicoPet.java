@@ -76,7 +76,7 @@ public class ServicoPet {
     public void listarPetsPorCriterio(Scanner scanner) {
         List<Pet> resultados = buscarPets(scanner);
         if (resultados.isEmpty()) {
-            System.out.println("Nenhum pet encontrado para os criterios informados.");
+            System.out.println("Nenhum pet encontrado para os critérios informados.");
             return;
         }
         exibirResultados(resultados);
@@ -90,12 +90,12 @@ public class ServicoPet {
         }
 
         String novoNomeCompleto = perguntar(scanner, "Novo nome completo [" + petSelecionado.nomeCompleto() + "]: ");
-        String novoNumeroCasa = perguntar(scanner, "Novo numero da casa [" + petSelecionado.endereco().numero() + "]: ");
+        String novoNumeroCasa = perguntar(scanner, "Novo número da casa [" + petSelecionado.endereco().numero() + "]: ");
         String novaCidade = perguntar(scanner, "Nova cidade [" + petSelecionado.endereco().cidade() + "]: ");
         String novaRua = perguntar(scanner, "Nova rua [" + petSelecionado.endereco().rua() + "]: ");
         String novaIdade = perguntar(scanner, "Nova idade aproximada [" + valorNumericoExibivel(petSelecionado.idade()) + "]: ");
         String novoPeso = perguntar(scanner, "Novo peso aproximado [" + valorNumericoExibivel(petSelecionado.peso()) + "]: ");
-        String novaRaca = perguntar(scanner, "Nova raca [" + petSelecionado.raca() + "]: ");
+        String novaRaca = perguntar(scanner, "Nova raça [" + petSelecionado.raca() + "]: ");
 
         Pet petAtualizado = new Pet(
                 novoNomeCompleto.isBlank() ? petSelecionado.nomeCompleto() : ValidacaoUtil.validarNomeCompleto(novoNomeCompleto),
@@ -125,7 +125,7 @@ public class ServicoPet {
             return;
         }
 
-        String confirmacao = perguntar(scanner, "Confirma a exclusao? Digite SIM ou NAO: ");
+        String confirmacao = perguntar(scanner, "Confirma a exclusão? Digite SIM ou NAO: ");
         if (TextoUtil.normalizarParaBusca(confirmacao).equals("sim")) {
             repositorio.deletar(petSelecionado);
             System.out.println("Pet deletado com sucesso.");
@@ -146,18 +146,18 @@ public class ServicoPet {
                 .filter(pet -> pet.tipo() == tipoObrigatorio)
                 .toList();
 
-        int quantidadeCriterios = lerNumeroNoIntervalo(scanner, "Quantos criterios adicionais deseja usar? (1 ou 2): ", 1, 2);
+        int quantidadeCriterios = lerNumeroNoIntervalo(scanner, "Quantos critérios adicionais deseja usar? (1 ou 2): ", 1, 2);
         for (int criterioAtual = 1; criterioAtual <= quantidadeCriterios; criterioAtual++) {
             int opcao = lerNumeroNoIntervalo(scanner, """
-                    Escolha o criterio adicional:
+                    Escolha o critério adicional:
                     1. Nome ou sobrenome
                     2. Sexo
                     3. Idade
                     4. Peso
-                    5. Raca
-                    6. Endereco
-                    Opcao: """, 1, 6);
-            String valor = perguntar(scanner, "Digite o valor para o criterio " + criterioAtual + ": ");
+                    5. Raça
+                    6. Endereço
+                    Opção: """, 1, 6);
+            String valor = perguntar(scanner, "Digite o valor para o critério " + criterioAtual + ": ");
             filtrados = aplicarCriterio(filtrados, opcao, valor);
         }
 
@@ -189,7 +189,7 @@ public class ServicoPet {
                     contemTextoNormalizado(pet.raca(), valor)).toList();
             case 6 -> pets.stream().filter(pet ->
                     contemTextoNormalizado(pet.endereco().formatado(), valor)).toList();
-            default -> throw new ExcecaoNegocio("Criterio invalido.");
+            default -> throw new ExcecaoNegocio("Critério inválido.");
         };
     }
 
@@ -204,7 +204,7 @@ public class ServicoPet {
         }
         exibirResultados(resultados);
         int indiceSelecionado = lerNumeroNoIntervalo(scanner,
-                "Digite o numero do pet que deseja " + acao + ": ", 1, resultados.size());
+                "Digite o número do pet que deseja " + acao + ": ", 1, resultados.size());
         return resultados.get(indiceSelecionado - 1);
     }
 
@@ -212,12 +212,12 @@ public class ServicoPet {
         while (true) {
             String valorBruto = perguntar(scanner, mensagem);
             if (!valorBruto.matches("^\\d+$")) {
-                System.out.println("Digite apenas numeros.");
+                System.out.println("Digite apenas números.");
                 continue;
             }
             int opcao = Integer.parseInt(valorBruto);
             if (opcao < minimo || opcao > maximo) {
-                System.out.println("Opcao invalida. Tente novamente.");
+                System.out.println("Opção inválida. Tente novamente.");
                 continue;
             }
             return opcao;
